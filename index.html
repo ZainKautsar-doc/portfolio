@@ -4,12 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Simulasi Deposito</title>
+    <title>Deposito Bank Vertex</title>
 
     <!-- 
     - favicon
   -->
-    <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="shortcut icon" href="./favicon.ico" type="image/svg+xml" />
 
     <!-- 
     - custom css link
@@ -89,15 +89,15 @@
           <div class="container">
             <div class="hero-banner">
               <img
-                src="./assets/images/hero-banner.jpg"
+                src="./assets/images/hero-banner.png"
                 width="800"
                 height="864"
                 loading="lazy"
-                alt="Ethan's Photo"
+                alt="Foto bank"
                 class="img-cover"
               />
 
-              <div class="elem elem-1">
+              <!-- <div class="elem elem-1">
                 <p class="elem-title">1</p>
 
                 <p class="elem-text">Years of Success</p>
@@ -107,26 +107,26 @@
                 <p class="elem-title">800+</p>
 
                 <p class="elem-text">Orang</p>
-              </div>
+              </div> -->
 
-              <div class="elem elem-3">
+              <!-- <div class="elem elem-3">
                 <ion-icon name="trophy"></ion-icon>
-              </div>
+              </div> -->
 
-              <img
+              <!-- <img
                 src="./assets/images/rotate-img.png"
                 width="169"
                 height="172"
                 alt="I'm developer from New York"
                 class="rotate-img"
-              />
+              /> -->
             </div>
 
             <div class="hero-content">
               <h2 class="hero-title">
                 <!-- <span>Deposito Berjangka</span> -->
-                <strong>Bank Satrya</strong> Keamanan Dana & Pertumbuhan yang
-                Pasti
+                <strong>Bank Vertex</strong> Dimulai Dari Deret, Menuju Puncak
+                Keuangan Anda
               </h2>
 
               <p class="hero-text">
@@ -138,14 +138,14 @@
               <div class="btn-group">
                 <a href="#contact" class="btn btn-primary blue">Kirim Pesan</a>
 
-                <a href="#about" class="btn">Tentang Kami</a>
+                <a href="#about" class="btn">Apa itu deposito?</a>
               </div>
             </div>
           </div>
         </section>
 
         <!-- 
-        - #ABOUT
+        - #PENGERTIAN
       -->
 
         <section class="section about" id="about">
@@ -156,7 +156,7 @@
                 width="800"
                 height="652"
                 loading="lazy"
-                alt="Ethan's Photo"
+                alt="Deposito"
                 class="img-cover"
               />
 
@@ -165,21 +165,10 @@
                 width="800"
                 height="717"
                 loading="lazy"
-                alt="Ethan's Photo"
+                alt="Bank"
                 class="abs-img"
               />
 
-              <div class="abs-icon abs-icon-1">
-                <ion-icon name="logo-css3"></ion-icon>
-              </div>
-
-              <div class="abs-icon abs-icon-2">
-                <ion-icon name="logo-javascript"></ion-icon>
-              </div>
-
-              <div class="abs-icon abs-icon-3">
-                <ion-icon name="logo-angular"></ion-icon>
-              </div>
             </figure>
 
             <div class="about-content">
@@ -212,112 +201,53 @@
         <!-- 
         - #PORTFOLIO
       -->
-
+      <body id="kalkulator">
         <section class="section portfolio" id="portfolio">
           <div class="container">
             <p class="section-subtitle">Kalkulator</p>
 
             <h2 class="h2 section-title">Simulasi Deposito</h2>
 
-            <p class="section-text">
-              Dliquip ex ea commo do conse namber onequa ute irure dolor in
-              reprehen derit in voluptate
+            <p class="deskripsi">
+              Simulasi Kalkulator Deposito adalah alat bantu yang digunakan untuk 
+              memperkirakan jumlah bunga dan total akumulasi dana dari penempatan deposito 
+              berdasarkan nominal dan jangka waktu tertentu.
             </p>
 
-            <ul class="portfolio-list">
-              <li>
-                <a
-                  href="#"
-                  class="portfolio-card"
-                  style="
-                    background-image: url('./assets/images/portfolio-1.jpg');
-                  "
-                >
-                  <div class="card-content">
-                    <p class="card-subtitle">Youtube</p>
+            </p>
+            <br>
+            <label for="nominal"><b>Nominal Penempatan (Rp)</b></label>
+            <input type="number" id="nominal" placeholder="Contoh: 1000000" />
 
-                    <h3 class="h3 card-title">Web Application for Desiverse</h3>
+            <label><b>Durasi Deposito</b></label>
+            <div class="button-group">
+            <button onclick="pilihDurasi(3, this)">3 Bulan (3%)</button>
+            <button onclick="pilihDurasi(6, this)">6 Bulan (5%)</button>
+            <button onclick="pilihDurasi(12, this)">12 Bulan (6%)</button>
+            </div>
 
-                    <span class="btn-link">
-                      <span>View Project</span>
+            <div class="hasil" id="hasil" style="display: none">
+            <p><strong>Bunga:</strong> <span id="bunga">Rp 0</span></p>
+            <p><strong>Total Akumulasi:</strong> <span id="total">Rp 0</span></p>
+            </div>
 
-                      <ion-icon name="arrow-forward"></ion-icon>
-                    </span>
-                  </div>
-                </a>
-              </li>
+    <div class="syarat">
+      Syarat & Ketentuan <br>
+      -Perhitungan diatas belum termasuk pajak bunga. <br>
+      -Suku bunga dapat berubah sewaktu-waktu mengikuti 
+      ketentuan yang berlaku. <br>
+      -Dana pokok dan bunga hanya dapat dicairkan pada akhir masa jatuh tempo. <br>
+      -Penarikan sebelum jatuh tempo dapat dikenakan penalti atau pengurangan bunga. <br>
+      -Simulasi ini merupakan ilustrasi perhitungan Tahapan Berjangka, 
+      perhitungan sebenarnya mengikuti perhitungan di sistem Bank Vertex.
+    </div>
+  </div>
 
-              <li>
-                <a
-                  href="#"
-                  class="portfolio-card"
-                  style="
-                    background-image: url('./assets/images/portfolio-2.jpg');
-                  "
-                >
-                  <div class="card-content">
-                    <p class="card-subtitle">Vimeo</p>
+  <script src="script.js"></script>
 
-                    <h3 class="h3 card-title">Web Application for Desiverse</h3>
-
-                    <span class="btn-link">
-                      <span>View Project</span>
-
-                      <ion-icon name="arrow-forward"></ion-icon>
-                    </span>
-                  </div>
-                </a>
-              </li>
-
-              <li>
-                <a
-                  href="#"
-                  class="portfolio-card"
-                  style="
-                    background-image: url('./assets/images/portfolio-3.jpg');
-                  "
-                >
-                  <div class="card-content">
-                    <p class="card-subtitle">Soundcloud</p>
-
-                    <h3 class="h3 card-title">Web Application for Desiverse</h3>
-
-                    <span class="btn-link">
-                      <span>View Project</span>
-
-                      <ion-icon name="arrow-forward"></ion-icon>
-                    </span>
-                  </div>
-                </a>
-              </li>
-
-              <li>
-                <a
-                  href="#"
-                  class="portfolio-card"
-                  style="
-                    background-image: url('./assets/images/portfolio-4.jpg');
-                  "
-                >
-                  <div class="card-content">
-                    <p class="card-subtitle">Details</p>
-
-                    <h3 class="h3 card-title">Web Application for Desiverse</h3>
-
-                    <span class="btn-link">
-                      <span>View Project</span>
-
-                      <ion-icon name="arrow-forward"></ion-icon>
-                    </span>
-                  </div>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </section>
 
         <!-- 
-        - #SKILLS
+        - #GRAFIK
       -->
 
         <section class="section skills" id="skills">
@@ -331,7 +261,7 @@
               reprehen derit in voluptate
             </p>
 
-            <ul class="skills-list">
+            <!-- <ul class="skills-list">
               <li class="skills-item">
                 <div class="wrapper" style="width: 95%">
                   <h3 class="skills-title">CSS</h3>
@@ -405,7 +335,7 @@
               </li>
             </ul>
           </div>
-        </section>
+        </section> -->
 
         <!-- 
         - #CONTACT
@@ -486,7 +416,7 @@
                       <h3 class="contact-item-title">Phone</h3>
 
                       <a href="tel:+1234567890" class="contact-item-link"
-                        >+123 456 7890</a
+                        >+62 8954321234</a
                       >
                     </div>
                   </li>
@@ -602,7 +532,7 @@
     <footer class="footer">
       <div class="container">
         <p class="copyright">
-          &copy; 2025 <a href="#" class="copyright-link">BankSatrya</a>. All
+          &copy; 2025 <a href="#" class="copyright-link">Bank Vertex</a>. All
           Rights Reseverd
         </p>
 
@@ -617,12 +547,6 @@
         </ul>
       </div>
     </footer>
-
-    <!-- 
-    - #BACK TO TOP
-  -->
-
-    <a href="#top" class="back-to-top" data-back-to-top>BACK TOP</a>
 
     <!-- 
     - custom js link

@@ -9,7 +9,7 @@
   --midnight-blue: hsl(231, 83%, 25%);
   --minion-yellow: hsl(50, 100%, 64%);
   --independence: hsl(225, 24%, 27%);
-  --orange-soda: hsl(7, 96%, 61%);
+  --orange-soda: hsl(244, 79%, 56%);
   --space-cadet: hsl(243, 23%, 18%);
   --fiery-rose: hsl(353, 83%, 65%);
   --klein-blue: hsl(230, 80%, 39%);
@@ -173,14 +173,28 @@ body {
 }
 
 .btn {
-  color: var(--white);
-  font-family: var(--ff-barlow);
-  font-size: var(--fs-5);
-  font-weight: var(--fw-600);
-  max-width: max-content;
-  padding: var(--padding, 10px 40px);
-  border-radius: 50px;
-  transition: var(--transition-2);
+  padding: 12.5px 30px;
+  border: 0;
+  border-radius: 100px;
+  background-color: hsl(230, 80%, 39%);
+  color: #ffffff;
+  font-weight: Bold;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+}
+
+.btn:hover {
+  background-color: blue;
+  box-shadow: 0 0 20px #6f71ff50;
+  transform: scale(1.1);
+}
+
+.btn:active {
+  background-color: #3d94cf;
+  transition: all 0.25s;
+  -webkit-transition: all 0.25s;
+  box-shadow: none;
+  transform: scale(0.98);
 }
 
 .btn-primary.blue {
@@ -331,7 +345,7 @@ body {
 .hero-banner {
   width: 150px;
   height: 172px;
-  background-color: var(--independence);
+  background-color: none(--independence);
   border-radius: var(--radius-10);
   margin-inline: auto;
   margin-block-end: 30px;
@@ -373,7 +387,7 @@ body {
 }
 
 /*-----------------------------------*\
-  #ABOUT
+  #PENGERTIAN
 \*-----------------------------------*/
 
 .abs-img,
@@ -404,67 +418,139 @@ body {
 }
 
 /*-----------------------------------*\
-  #PORTFOLIO
+  #KALKULATOR
 \*-----------------------------------*/
 
-.portfolio .section-title {
-  margin-block-end: 18px;
-}
-
-.portfolio .section-text {
-  margin-block-end: 80px;
-}
-
-.portfolio-list {
-  display: grid;
-  gap: 60px;
-}
-
-.portfolio-card {
-  background-color: var(--independence);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  padding: 120px 20px;
-  border-radius: var(--radius-20);
-  font-family: var(--ff-barlow);
-  color: var(--white);
-  font-weight: var(--fw-600);
-  transition: var(--transition-2);
-}
-
-.portfolio-list > li:nth-child(even) .card-content {
-  margin-inline-start: auto;
-}
-
-.portfolio-card .card-subtitle {
-  color: var(--orange-soda);
-  margin-block-end: 5px;
-}
-
-.portfolio-card .card-title {
-  max-width: 20ch;
-  margin-block-end: 20px;
-}
-
-.portfolio-card .btn-link {
+.Kalkulator {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f0f0;
+  margin: 0;
+  padding: 0;
   display: flex;
-  align-items: center;
-  gap: 5px;
-  font-size: var(--fs-6);
-  text-transform: uppercase;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
 }
 
-.portfolio-card .btn-link ion-icon {
-  color: var(--orange-soda);
-  font-size: 1.6rem;
+.kalkulator {
+  background-color: hsl(230, 80%, 39%);
+  padding: 30px 40px;
+  margin-top: 60px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+}
+
+.h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: rgb(255, 255, 255);
+}
+
+.label {
+  margin-top: 15px;
+  display: block;
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+}
+
+.input[type="number"] {
+  margin-top: 5px;
+  padding: 12px 15px;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  background-color: #fafafa;
+  transition: border 0.3s;
+}
+
+.input[type="number"]:focus {
+  border-color: hsl(230, 80%, 39%);
+  outline: none;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.button-group button {
+  flex: 1;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 2px solid hsl(230, 80%, 39%);
+  background-color: white;
+  color: hsl(230, 80%, 39%);
+  cursor: pointer;
+  transition: 0.3s;
+  min-width: 100px;
+}
+
+.button-group button.active,
+.button-group button:hover {
+  background-color: hsl(230, 80%, 39%);
+  color: white;
+}
+
+.hasil {
+  margin-top: 25px;
+  padding: 20px;
+  background-color: #f1f8ff;
+  border-left: 5px solid hsl(230, 80%, 39%);
+  border-radius: 8px;
+}
+
+.hasil p {
+  font-size: 18px;
+  margin: 10px 0;
+  color: #222;
+}
+
+.hasil span {
+  font-weight: bold;
+  color: #005eda;
+}
+
+.syarat {
+  margin-top: 20px;
+  color: #999;
+  text-align: top;
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #2d354a; /* warna gelap kebiruan */
+  border-radius: 10px;
+  color: #ccc;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 480px) {
+  .container {
+    padding: 20px;
+    margin-top: 30px;
+  }
+
+  .button-group {
+    flex-direction: column;
+  }
+
+  .button-group button {
+    width: 100%;
+  }
 }
 
 /*-----------------------------------*\
-  #SKILLS
+  #GRAFIK
 \*-----------------------------------*/
 
-.skills .section-title {
+/* .skills .section-title {
   margin-block-end: 20px;
 }
 
@@ -502,7 +588,7 @@ body {
   background-color: var(--orange-soda);
   height: 100%;
   border-radius: inherit;
-}
+} */
 
 /*-----------------------------------*\
   #CONTACT
@@ -712,7 +798,7 @@ textarea.contact-input {
   #BACK TO TOP
 \*-----------------------------------*/
 
-.back-to-top {
+/* .back-to-top {
   color: var(--white);
   font-size: 1.3rem;
   position: fixed;
@@ -739,7 +825,7 @@ textarea.contact-input {
   width: 100px;
   height: 1px;
   background-color: var(--white);
-}
+} */
 
 /*-----------------------------------*\
   #MEDIA QUERIES
@@ -1049,7 +1135,7 @@ textarea.contact-input {
   }
 
   /**
-   * CONTACT
+   * KONTAK
    */
 
   .contact-card {
